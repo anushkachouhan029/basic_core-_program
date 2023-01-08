@@ -1,32 +1,18 @@
-﻿class FlipCoin
+﻿class HarmonicNumber
 {
     static void Main(String[] args)
     {
-        double tails = 0;
-        double heads = 0;
-        int loopCount = 1;
+        float count;
+        float sum = 0;
 
-        while (loopCount <= 10000)
+        Console.WriteLine("Enter the value of N: ");
+        int N = Convert.ToInt32(Console.ReadLine());
+        for (count = 1; count <= N; count++)
         {
-            Random random = new Random();
-            double coinFlip = random.Next(0, 2);
-
-            if (coinFlip < 0.5)
-            {
-                tails++;
-            }
-            else
-            {
-                heads++;
-            }
-
-            loopCount = loopCount + 1;
+            Console.WriteLine("1/{0} + ", count);
+            sum += 1 / count;
         }
-        double percentTails = (tails / loopCount) * 100;
-        double percentHeads = (heads / loopCount) * 100;
-
-        Console.WriteLine("The percentage of heads is: " + percentHeads + " % ");
-        Console.WriteLine("The percentage of tails is: " + percentTails + " % ");
+        Console.WriteLine("Sum of series of {0} terms: {1}", N, sum);
         Console.ReadLine();
     }
 }
