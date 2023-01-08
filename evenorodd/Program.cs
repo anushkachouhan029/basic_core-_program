@@ -1,18 +1,17 @@
-﻿class HarmonicNumber
+﻿class LeapYear
 {
     static void Main(String[] args)
     {
-        float count;
-        float sum = 0;
+        Console.WriteLine("Enter the Year in 4 digits: ");
+        int Year = Convert.ToInt32(Console.ReadLine());
 
-        Console.WriteLine("Enter the value of N: ");
-        int N = Convert.ToInt32(Console.ReadLine());
-        for (count = 1; count <= N; count++)
+        if (((Year % 4 == 0) && (Year % 100 != 0)) || (Year % 400 == 0))
         {
-            Console.WriteLine("1/{0} + ", count);
-            sum += 1 / count;
+            Console.WriteLine("{0} is a Leap Year", Year);
         }
-        Console.WriteLine("Sum of series of {0} terms: {1}", N, sum);
+        else
+        {
+            Console.WriteLine("{0} is not a Leap Year", Year);
+        }
         Console.ReadLine();
     }
-}
