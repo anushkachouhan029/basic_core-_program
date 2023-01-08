@@ -1,30 +1,21 @@
-﻿class VowelOrConsonant
+﻿class Factors
 {
     static void Main(String[] args)
     {
-        Console.WriteLine("Enter any Alphabet: ");
-        char alphabet = Convert.ToChar(Console.ReadLine().ToLower());
+        Console.WriteLine("Enter a value: ");
+        int N = Convert.ToInt32(Console.ReadLine());
+        int i = 0;
 
-        switch (alphabet)
+        for (i = 1; i <= N; i++)
         {
-            case 'a':
-                Console.WriteLine("Alphabet is Vowel");
-                break;
-            case 'e':
-                Console.WriteLine("Alphabet is Vowel");
-                break;
-            case 'i':
-                Console.WriteLine("Alphabet is Vowel");
-                break;
-            case 'o':
-                Console.WriteLine("Alphabet is Vowel");
-                break;
-            case 'u':
-                Console.WriteLine("Alphabet is Vowel");
-                break;
-            default:
-                Console.WriteLine("Alphabet is Consonant");
-                break;
+            if (N % i == 0)
+            {
+                Console.WriteLine(i + " is a Factor of " + N);
+            }
+            else
+            {
+                Console.WriteLine(i + " is not a Factor of " + N);
+            }
         }
         Console.ReadLine();
     }
